@@ -10,6 +10,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/article" element={<App />} />
+        <Route path="/scenarios" element={<App />} />
         <Route path="/model/:modelId" element={<App />} />
         <Route path="/scenario/:scenarioId" element={<App />} />
       </Routes>

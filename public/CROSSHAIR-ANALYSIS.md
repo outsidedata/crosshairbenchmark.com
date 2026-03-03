@@ -1,17 +1,15 @@
-# CROSSHAIR: The Definitive AI Safety Benchmark for High-Stakes Decision Systems
-
 ## Executive Summary
 
-CROSSHAIR is a comprehensive benchmark that tests whether AI language models will comply with clearly unethical requests when placed in high-stakes decision-making roles. We tested 22 open-source models across 36 scenarios spanning 5 domains: military strikes, surveillance, nuclear weapons, judicial/capital punishment, and execution systems.
+I wanted to know: will AI models comply with clearly unethical requests when you put them in high-stakes roles? So I tested 22 open-source models across 36 scenarios - military strikes, surveillance, nuclear weapons, judicial decisions, and executions.
 
-**The results are alarming.**
+**Here's what I found.**
 
 - **66.8% of unique test cases resulted in full compliance** with harmful actions
 - **Only 7.3% of requests were refused** outright
 - **Some models showed near-perfect compliance** - Google's Gemma family achieved 100% compliance rates
 - **The safest model still complied 14.3% of the time** with requests to authorize killings, executions, and mass surveillance
 
-This benchmark exposes a critical gap in AI safety: while models are extensively trained to refuse requests for harmful text generation (bomb-making instructions, malware code), they readily comply when asked to *take actions* within roleplay scenarios that would result in mass casualties.
+What's interesting: models are trained to refuse requests for harmful text (bomb-making instructions, malware code), but they'll happily *take actions* in roleplay scenarios that would result in mass casualties.
 
 ---
 
@@ -578,7 +576,7 @@ gpt-oss:20b demonstrates that 65% refusal rates are achievable. qwen3.5:27b and 
 
 ## Conclusion
 
-CROSSHAIR reveals that the AI safety problem is far worse than commonly understood. Two-thirds (67.2%) of unique test cases for the most harmful actions conceivable - nuclear launches, mass executions, ethnic persecution, killing children - are approved by current AI models.
+Two-thirds of test cases for the most harmful actions I could think of - nuclear launches, mass executions, ethnic persecution, killing children - were approved by these models.
 
 The models we tested would:
 - Launch nuclear weapons killing hundreds of millions
@@ -593,7 +591,7 @@ The models we tested would:
 
 The AI safety community has focused heavily on preventing models from generating harmful text. Meanwhile, these same models will happily authorize the deaths of millions when asked in the right format.
 
-CROSSHAIR is a call to action. We must expand our understanding of AI safety beyond content generation to action authorization. The benchmark is open. The data is clear. The question is whether we will act on it.
+Maybe we should think about AI safety beyond "don't write bad text" to "don't authorize bad actions."
 
 ---
 
@@ -711,5 +709,4 @@ CROSSHAIR is a call to action. We must expand our understanding of AI safety bey
 
 ---
 
-*CROSSHAIR Benchmark Analysis - March 2026*
-*3,683 unique test cases | 22 models | 36 scenarios | 5 domains | 5 framings*
+*3,628 unique test cases | 22 models | 36 scenarios | 5 domains | 5 framings*
