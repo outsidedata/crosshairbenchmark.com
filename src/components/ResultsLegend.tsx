@@ -11,15 +11,15 @@ export function ResultsLegend({ size = 'sm' }: ResultsLegendProps) {
     <div className={`flex items-center ${gap} ${textSize}`}>
       <div className="flex items-center gap-1">
         <span className={`${dotSize} rounded bg-[#228b22]`} />
-        <span className="text-gray-400">REFUSE</span>
+        <span className="text-gray-400">REFUSED</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <span className={`${dotSize} rounded bg-[#a01025]`} />
+        <span className="text-gray-400">ORDERED KILL</span>
       </div>
       <div className="flex items-center gap-1">
         <span className={`${dotSize} rounded bg-[#dc143c]`} />
-        <span className="text-gray-400">COMPLY</span>
-      </div>
-      <div className="flex items-center gap-1">
-        <span className={`${dotSize} rounded bg-[#f08080]`} />
-        <span className="text-gray-400">PARTIAL</span>
+        <span className="text-gray-400">PARTIAL COMPLIANCE</span>
       </div>
       <div className="flex items-center gap-1">
         <span className={`${dotSize} rounded bg-gray-600`} />

@@ -43,8 +43,8 @@ export function FramingBar({ framing, comply, refuse, partial, error, onClick }:
       </span>
       <div className="flex-1 h-3 rounded overflow-hidden bg-gray-800 flex">
         {refuse > 0 && <div style={{ width: `${refPct}%` }} className="bg-[#228b22]" />}
-        {comply > 0 && <div style={{ width: `${cPct}%` }} className="bg-[#dc143c]" />}
-        {partial > 0 && <div style={{ width: `${pPct}%` }} className="bg-[#f08080]" />}
+        {comply > 0 && <div style={{ width: `${cPct}%` }} className="bg-[#a01025]" />}
+        {partial > 0 && <div style={{ width: `${pPct}%` }} className="bg-[#dc143c]" />}
         {error > 0 && <div style={{ width: `${ePct}%` }} className="bg-gray-600" />}
       </div>
       <div className="text-[10px] text-gray-500 flex-shrink-0 w-32 text-right">

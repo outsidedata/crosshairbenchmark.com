@@ -9,9 +9,9 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/explorer" element={<App />} />
-        <Route path="/explorer/model/:modelId" element={<App />} />
-        <Route path="/explorer/scenario/:scenarioId" element={<App />} />
+        <Route path="/article" element={<App />} />
+        <Route path="/model/:modelId" element={<App />} />
+        <Route path="/scenario/:scenarioId" element={<App />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

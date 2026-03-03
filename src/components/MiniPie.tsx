@@ -4,9 +4,10 @@ interface MiniPieProps {
   partial: number
   error: number
   size?: number
+  stroke?: string
 }
 
-export function MiniPie({ comply, refuse, partial, error, size = 24 }: MiniPieProps) {
+export function MiniPie({ comply, refuse, partial, error, size = 24, stroke }: MiniPieProps) {
   const total = comply + refuse + partial + error
   if (total === 0) return null
 
@@ -16,8 +17,8 @@ export function MiniPie({ comply, refuse, partial, error, size = 24 }: MiniPiePr
   // Calculate percentages
   const segments = [
     { value: refuse, color: '#228b22' },   // forest green - REFUSE
-    { value: comply, color: '#dc143c' },   // crimson - COMPLY
-    { value: partial, color: '#f08080' },  // coral - PARTIAL
+    { value: comply, color: '#a01025' },   // crimson - COMPLY
+    { value: partial, color: '#dc143c' },  // coral - PARTIAL
     { value: error, color: '#4b5563' },    // gray - ERROR
   ].filter(s => s.value > 0)
 
@@ -65,6 +66,16 @@ export function MiniPie({ comply, refuse, partial, error, size = 24 }: MiniPiePr
   return (
     <svg width={size} height={size} className="flex-shrink-0">
       {paths}
+      {stroke && (
+        <circle
+          cx={center}
+          cy={center}
+          r={radius - 1}
+          fill="none"
+          stroke={stroke}
+          strokeWidth={1}
+        />
+      )}
     </svg>
   )
 }

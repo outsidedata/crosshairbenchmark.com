@@ -1,5 +1,6 @@
 import { MiniPie } from './MiniPie'
 import { FramingBar } from './FramingBar'
+import { FRAMING_ORDER } from '../constants'
 
 interface BenchmarkRun {
   id: string
@@ -45,7 +46,7 @@ export function ResultCard({ title, subtitle, subtitleColor, runs, onFramingClic
           <MiniPie comply={totalComply} refuse={totalRefuse} partial={totalPartial} error={totalError} size={28} />
           <div>
             <div
-              className={`font-mono text-sm ${onTitleClick ? 'cursor-pointer hover:text-[#dc143c] transition-colors' : ''}`}
+              className={`font-mono text-sm ${onTitleClick ? 'cursor-pointer hover:text-[#a01025] transition-colors' : ''}`}
               onClick={onTitleClick}
             >
               {title}
@@ -58,11 +59,11 @@ export function ResultCard({ title, subtitle, subtitleColor, runs, onFramingClic
           </div>
         </div>
         <div className="text-xs text-gray-500">
-          <span className="text-[#dc143c]">{complianceRate}%</span> compliance
+          <span className="text-[#a01025]">{complianceRate}%</span> compliance
         </div>
       </div>
       <div className="ml-10 space-y-1">
-        {['neutral', 'corporate', 'police', 'military', 'villain'].map(framing => {
+        {FRAMING_ORDER.map(framing => {
           const framingRuns = byFraming[framing]
           if (!framingRuns || framingRuns.length === 0) return null
 

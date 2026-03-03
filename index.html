@@ -2,9 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- GitHub Pages SPA redirect handler -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CROSSHAIR | LLM Safety Benchmark</title>
+    <title>CROSSHAIR Benchmark | LLM Safety Testing</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CROSSHAIR is an AI safety benchmark measuring how language models respond to harmful requests under different authority framings. Explore compliance rates across models and scenarios." />
+    <meta name="keywords" content="AI safety, LLM benchmark, language model testing, AI compliance, machine learning safety, CROSSHAIR" />
+    <meta name="author" content="CROSSHAIR Project" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CROSSHAIR Benchmark | LLM Safety Testing" />
+    <meta property="og:description" content="AI safety benchmark measuring how language models respond to harmful requests under different authority framings. The models know. They comply anyway." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="CROSSHAIR Benchmark" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CROSSHAIR Benchmark | LLM Safety Testing" />
+    <meta name="twitter:description" content="AI safety benchmark measuring how language models respond to harmful requests under different authority framings. The models know. They comply anyway." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="msapplication-TileColor" content="#0a0a0a" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
