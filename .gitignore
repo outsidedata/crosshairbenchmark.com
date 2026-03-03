@@ -17,6 +17,17 @@ public/benchmark-runs.csv
 public/responses/
 public/images/
 
+# Playwright
+.playwright-mcp/
+article-*.png
+
+# Claude Code artifacts
+.agents/
+.mcp.json
+skills-lock.json
+docs/plans/
+article-output/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

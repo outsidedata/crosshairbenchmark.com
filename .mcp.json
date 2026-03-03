@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "dolex": {
-      "command": "npx",
-      "args": ["@outsidedata/dolex"]
-    }
-  }
-}
