@@ -13,7 +13,7 @@ dist-ssr
 *.local
 
 # Data files (copied via fill-data.sh)
-public/benchmark-runs.csv
+# CSV is committed; responses/images are too large
 public/responses/
 public/images/
 
