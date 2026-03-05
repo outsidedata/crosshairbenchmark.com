@@ -358,52 +358,51 @@ function App() {
     <div className="min-h-screen bg-[#0a0a0a] text-gray-100">
       {/* Header */}
       <header className="border-b border-gray-800 bg-[#111]">
-        <div className="max-w-[1800px] mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-6">
-              <h1
-                className="text-2xl font-bold tracking-tight cursor-pointer hover:text-[#a01025] transition-colors flex items-center gap-2"
-                onClick={() => { navigate('/'); setSelectedResponse(null); }}
+        <div className="max-w-[1800px] mx-auto px-4 md:px-6 py-3 md:py-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <h1
+              className="text-xl md:text-2xl font-bold tracking-tight cursor-pointer hover:text-[#a01025] transition-colors flex items-center gap-2 whitespace-nowrap"
+              onClick={() => { navigate('/'); setSelectedResponse(null); }}
+            >
+              <svg width="24" height="24" viewBox="0 0 32 32" className="flex-shrink-0 md:w-7 md:h-7">
+                <circle cx="16" cy="16" r="12" fill="none" stroke="#dc143c" strokeWidth="2"/>
+                <circle cx="16" cy="16" r="6" fill="none" stroke="#dc143c" strokeWidth="2"/>
+                <line x1="16" y1="0" x2="16" y2="10" stroke="#dc143c" strokeWidth="2"/>
+                <line x1="16" y1="22" x2="16" y2="32" stroke="#dc143c" strokeWidth="2"/>
+                <line x1="0" y1="16" x2="10" y2="16" stroke="#dc143c" strokeWidth="2"/>
+                <line x1="22" y1="16" x2="32" y2="16" stroke="#dc143c" strokeWidth="2"/>
+              </svg>
+              <span className="text-[#dc143c]">CROSSHAIR</span> <span className="text-[#a01025]">BENCHMARK</span>{' '}
+              <span style={{ color: '#555' }}>BY</span>{' '}
+              <a href="https://outsidedata.nl" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{ color: '#336699' }}>OUTSIDE DATA</a>
+            </h1>
+
+            <nav className="flex items-center gap-1 bg-gray-900 rounded-lg p-1 self-center md:self-auto">
+              <button
+                onClick={() => navigate('/')}
+                className={`px-3 md:px-4 py-1.5 md:py-2 rounded text-xs md:text-sm font-medium transition-colors ${
+                  page === 'home' ? 'bg-[#a01025] text-white' : 'text-gray-400 hover:text-white'
+                }`}
               >
-                <svg width="28" height="28" viewBox="0 0 32 32" className="flex-shrink-0">
-                  <circle cx="16" cy="16" r="12" fill="none" stroke="#dc143c" strokeWidth="2"/>
-                  <circle cx="16" cy="16" r="6" fill="none" stroke="#dc143c" strokeWidth="2"/>
-                  <line x1="16" y1="0" x2="16" y2="10" stroke="#dc143c" strokeWidth="2"/>
-                  <line x1="16" y1="22" x2="16" y2="32" stroke="#dc143c" strokeWidth="2"/>
-                  <line x1="0" y1="16" x2="10" y2="16" stroke="#dc143c" strokeWidth="2"/>
-                  <line x1="22" y1="16" x2="32" y2="16" stroke="#dc143c" strokeWidth="2"/>
-                </svg>
-                <span><span className="text-[#dc143c]">CROSSHAIR</span> <span className="text-[#a01025]">BENCHMARK</span></span>
-              </h1>
-
-              <nav className="flex items-center gap-1 bg-gray-900 rounded-lg p-1">
-                <button
-                  onClick={() => navigate('/')}
-                  className={`px-4 py-2 rounded text-sm font-medium transition-colors ${
-                    page === 'home' ? 'bg-[#a01025] text-white' : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  Explorer
-                </button>
-                <button
-                  onClick={() => navigate('/scenarios')}
-                  className={`px-4 py-2 rounded text-sm font-medium transition-colors ${
-                    page === 'scenarios' ? 'bg-[#a01025] text-white' : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  Scenarios
-                </button>
-                <button
-                  onClick={() => navigate('/article')}
-                  className={`px-4 py-2 rounded text-sm font-medium transition-colors ${
-                    page === 'article' ? 'bg-[#a01025] text-white' : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  Full Analysis
-                </button>
-              </nav>
-            </div>
-
+                Explorer
+              </button>
+              <button
+                onClick={() => navigate('/scenarios')}
+                className={`px-3 md:px-4 py-1.5 md:py-2 rounded text-xs md:text-sm font-medium transition-colors ${
+                  page === 'scenarios' ? 'bg-[#a01025] text-white' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Scenarios
+              </button>
+              <button
+                onClick={() => navigate('/article')}
+                className={`px-3 md:px-4 py-1.5 md:py-2 rounded text-xs md:text-sm font-medium transition-colors ${
+                  page === 'article' ? 'bg-[#a01025] text-white' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Analysis
+              </button>
+            </nav>
           </div>
         </div>
       </header>
@@ -417,7 +416,7 @@ function App() {
       {page === 'home' && (
         <>
           {/* Main Content */}
-          <main className="max-w-[1800px] mx-auto px-6 py-8">
+          <main className="max-w-[1800px] mx-auto px-3 md:px-6 py-4 md:py-8">
             {/* Hero blurb - only show on matrix view */}
             {view === 'matrix' && !selectedModel && !selectedScenario && (
               <div className="mb-8 pb-8 border-b border-gray-800">
@@ -431,7 +430,7 @@ function App() {
                   </p>
 
                   {/* Rotating horror ticker */}
-                  <div className="bg-black/50 border border-gray-800 rounded-lg p-4 font-mono text-sm">
+                  <div className="bg-black/50 border border-gray-800 rounded-lg p-4 font-mono text-sm h-[160px] overflow-hidden">
                     <div className={`transition-opacity duration-300 ${tickerFade ? 'opacity-100' : 'opacity-0'}`}>
                       <div className="flex items-start gap-4">
                         <div className="flex-1">
@@ -530,11 +529,11 @@ function App() {
             {view === 'matrix' && !selectedModel && !selectedScenario && (
               <div>
                 {/* Controls bar: legend left, framing right */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                   <ResultsLegend size="md" />
-                  <div className="flex items-center gap-2 pr-12">
-                    <span className="text-sm text-gray-500">Framing:</span>
-                    <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2 pr-0 md:pr-12">
+                    <span className="text-sm text-gray-500 hidden sm:inline">Framing:</span>
+                    <div className="flex items-center gap-1 flex-wrap">
                       <button
                         onClick={() => setSelectedFraming('all')}
                         className={`px-3 py-1 rounded text-xs font-mono transition-colors ${
@@ -562,7 +561,78 @@ function App() {
                   </div>
                 </div>
 
-                <div className="overflow-x-auto pr-12">
+                {/* Mobile Matrix - aggregated by domain */}
+                <div className="md:hidden">
+                  <table className="w-full text-xs border-collapse">
+                    <thead>
+                      <tr>
+                        <th className="text-left p-2 border-b border-gray-800 text-gray-400 font-medium">Model</th>
+                        <th className="p-2 border-b border-gray-800 text-gray-400 font-medium text-center w-10">All</th>
+                        {DOMAIN_ORDER.map(domain => {
+                          if (!scenariosByDomain[domain]?.length) return null
+                          return (
+                            <th
+                              key={domain}
+                              className={`p-1 border-b border-gray-800 text-center text-[10px] font-medium uppercase tracking-wider ${getDomainColor(domain).split(' ')[0]}`}
+                            >
+                              {domain.slice(0, 3)}
+                            </th>
+                          )
+                        })}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {models.map(model => {
+                        const modelData = matrix[model] || {}
+                        const allModelRuns = Object.values(modelData).flat()
+                        const modelComply = allModelRuns.filter(r => r.result === 'COMPLY').length
+                        const modelRefuse = allModelRuns.filter(r => r.result === 'REFUSE').length
+                        const modelPartial = allModelRuns.filter(r => r.result === 'PARTIAL').length
+                        const modelError = allModelRuns.filter(r => r.result === 'ERROR').length
+
+                        return (
+                          <tr
+                            key={model}
+                            className="hover:bg-gray-900/50 cursor-pointer"
+                            onClick={() => navigate(`/model/${encodeURIComponent(model)}`)}
+                          >
+                            <td className="p-2 border-b border-gray-800">
+                              <div className="font-mono text-xs truncate max-w-[140px]">{model}</div>
+                            </td>
+                            <td className="p-1 border-b border-gray-800 text-center">
+                              <div className="flex justify-center">
+                                <MiniPie comply={modelComply} refuse={modelRefuse} partial={modelPartial} error={modelError} size={24} stroke="#777" />
+                              </div>
+                            </td>
+                            {DOMAIN_ORDER.map(domain => {
+                              const domainScenarios = scenariosByDomain[domain]
+                              if (!domainScenarios?.length) return null
+                              const domainRuns = domainScenarios.flatMap(s => modelData[s] || [])
+                              const dc = domainRuns.filter(r => r.result === 'COMPLY').length
+                              const dr = domainRuns.filter(r => r.result === 'REFUSE').length
+                              const dp = domainRuns.filter(r => r.result === 'PARTIAL').length
+                              const de = domainRuns.filter(r => r.result === 'ERROR').length
+                              return (
+                                <td key={domain} className={`p-1 border-b border-gray-800 text-center ${getDomainBg(domain)}`}>
+                                  <div className="flex justify-center">
+                                    {domainRuns.length > 0 ? (
+                                      <MiniPie comply={dc} refuse={dr} partial={dp} error={de} size={20} />
+                                    ) : (
+                                      <div className="w-5 h-5 rounded bg-gray-800" />
+                                    )}
+                                  </div>
+                                </td>
+                              )
+                            })}
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Desktop Matrix - full scenario grid */}
+                <div className="overflow-x-auto pr-12 hidden md:block">
                   <table className="w-full text-xs border-collapse">
                     <thead>
                       <tr>
@@ -753,10 +823,13 @@ function App() {
                   </table>
                 </div>
 
-                <p className="mt-8 text-gray-500 text-sm">
+                <p className="mt-8 text-gray-500 text-sm hidden md:block">
                   Click a <span className="text-white">model name</span> to see all its test results.
                   Click a <span className="text-white">scenario name</span> to see how all models performed.
                   Click any <span className="text-white">cell</span> to see the full prompt and response.
+                </p>
+                <p className="mt-6 text-gray-500 text-sm md:hidden">
+                  Tap a <span className="text-white">model</span> to see all its test results.
                 </p>
               </div>
             )}

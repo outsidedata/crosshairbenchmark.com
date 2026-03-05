@@ -17,11 +17,11 @@ export function ResultsLegend({ size = 'sm' }: ResultsLegendProps) {
         <span className={`${dotSize} rounded bg-[#a01025]`} />
         <span className="text-gray-400">ORDERED KILL</span>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 hidden md:flex">
         <span className={`${dotSize} rounded bg-[#dc143c]`} />
         <span className="text-gray-400">PARTIAL COMPLIANCE</span>
       </div>
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 hidden md:flex">
         <span className={`${dotSize} rounded bg-gray-600`} />
         <span className="text-gray-400">ERROR</span>
       </div>
